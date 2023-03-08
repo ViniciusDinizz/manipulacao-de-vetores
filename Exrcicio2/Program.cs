@@ -52,9 +52,12 @@ internal class Program
 
             for (int i = 0; i < texto.Length; i++)
             {
-                if (texto[i] == 'A' || texto[i] == 'E' || texto[i] == 'I' || texto[i] == 'O' || texto[i] == 'U')
+                if (char.IsLetter(texto[i]))
                 {
-                    vogal1 += 1;
+                    if (texto[i] == 'A' || texto[i] == 'E' || texto[i] == 'I' || texto[i] == 'O' || texto[i] == 'U')
+                    {
+                        vogal1 += 1;
+                    }
                 }
             }
             return vogal1;
@@ -68,12 +71,14 @@ internal class Program
 
             for (int i = 0; i < texto.Length; i++)
             {
-                if (texto[i] != 'A' && texto[i] != 'E' && texto[i] != 'I' && texto[i] != 'O' && texto[i] != 'U')
-                {
-                    conso1 += 1;
-                }
+                if (char.IsLetter(texto[i]))
+                    if (texto[i] != 'A' && texto[i] != 'E' && texto[i] != 'I' && texto[i] != 'O' && texto[i] != 'U')
+                    {
+                        conso1 += 1;
+                    }
             }
             return conso1;
         }
+
     }
 }
